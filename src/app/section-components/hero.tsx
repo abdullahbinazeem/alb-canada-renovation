@@ -28,7 +28,7 @@ const HeroSection = () => {
           Roofing, Chimney, Skylight, Gutter, Flat Roof, Siding, Deck, Masonry,
           and More.
         </p>
-        <button className="mt-6 bg-[#da353b]  text-white font-bold py-4 px-6 rounded-xs hover:bg-[#ff0008] hover:scale-105 transition-all cursor-pointer">
+        <button className="mt-6 bg-primary  text-white font-bold py-4 px-6 rounded-xs hover:bg-[#ff0008] hover:scale-105 transition-all cursor-pointer">
           REQUEST FREE ESTIMATE
         </button>
       </div>

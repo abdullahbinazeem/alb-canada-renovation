@@ -1,4 +1,24 @@
+import { Phone } from "lucide-react";
 import Link from "next/link";
+
+const navItems = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Roofing-Services",
+    href: "/roofing-services",
+  },
+  {
+    name: "Projects Accomplished",
+    href: "/projects-accomplished",
+  },
+  {
+    name: "Other Services",
+    url: "/other-services",
+  },
+];
 
 export default function NavBar() {
   return (
@@ -10,30 +30,31 @@ export default function NavBar() {
         </div>
 
         {/* Nav links */}
-        <nav className="hidden md:block">
-          <ul className="flex space-x-8 uppercase sm:text-base text-sm font-semibold">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/roofing-services">Roofing Services</Link>
-            </li>
-            <li>
-              <Link href="/projects-accomplished">Projects Accomplished</Link>
-            </li>
-            <li>
-              <Link href="/other-services">Other Services</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
+        <nav className="hidden lg:block">
+          <ul className="flex uppercase sm:text-base text-sm ">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link
+                  href={item.url || "/"}
+                  key={index}
+                  className="hover:underline underline-offset-4 decoration-red-500 transition-all mx-4 text-sm xl:text-base"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
         {/* Right side call to action */}
         <div className="flex flex-col items-end text-sm">
-          <span className="text-yellow-400 font-semibold">24h service:</span>
-          <span>+1 (587) 581-6963</span>
+          <span className="text-primary font-semibold underline">
+            24h service:
+          </span>
+          <div className="flex items-center gap-3">
+            <Phone size={20} />
+            <span className="xl:text-lg">+1 (587) 581-6963</span>
+          </div>
         </div>
       </div>
     </div>
